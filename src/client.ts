@@ -30,11 +30,11 @@ export class MirrorClient extends Client {
 
    private onMessageUpdate(_oldMessage: Message | PartialMessage, newMessage: Message | PartialMessage): void {
       if (!newMessage.partial) {
-         this.mirrorMessage(newMessage);
+         this.mirrorMessage(newMessage, true);
       }
    }
 
-   private mirrorMessage(message: Message) {
+   private mirrorMessage(message: Message, edited: boolean = false) {
       if (!this.isMirrorableMessage(message)) {
          return;
       }
@@ -49,7 +49,7 @@ export class MirrorClient extends Client {
          return;
       }
       mirror.applyReplacements(message);
-      mirror.dispatchMessage(message, () => this.logMirroredMessage(message));  
+      mirror.dispatchMessage(message, () => this.logMirroredMessage(message), edited);  
    }
 
    private isMirrorableMessage(message: Message): boolean {

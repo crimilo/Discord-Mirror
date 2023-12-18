@@ -71,6 +71,7 @@ export class Mirror {
    private mirrorRequirements: MirrorRequirements;
    private mirrorOptions: MirrorOptions;
    private replacements: MirrorReplacements;
+   private messagesSended: Array<{from: Message, to: string}> = [];
 
    public constructor({
       webhookUrls = [],
@@ -112,13 +113,28 @@ export class Mirror {
       this.replacements.apply(message);
    }
 
-   public dispatchMessage(message: Message, callback: (message: Message) => void): void {
+   public dispatchMessage(message: Message, callback: (message: Message) => void, edited: boolean = false): void {
       for (const webhook of this.webhooks) {
          for (const payload of this.createMessagePayloads(message)) {
-            webhook
-               .send(payload)
-               .then(() => callback(message))
-               .catch(error => console.log(error));
+           const findMessage = this.messagesSended.filter(
+             (m) => m.from.id === message.id
+           );
+       
+           try {
+             if (edited && findMessage.length > 0) {
+               webhook.editMessage(findMessage[0].to, payload);
+             } else {
+               webhook.send(payload).then((whMsg) => {
+                 this.messagesSended.push({
+                   from: message,
+                   to: whMsg.id,
+                 });
+               });
+             }
+             callback(message);
+           } catch (error) {
+             console.log(error);
+           }
          }
       }
    }
