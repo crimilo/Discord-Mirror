@@ -1,7 +1,7 @@
 # ─────────────────────────────────────────────────────────────────────────────────────────────────────── #
 # Token of the personal Discord account that will mirror messages.                                        #
 # Learn how to find your account token here: https://www.androidauthority.com/get-discord-token-3149920/  #
-token: "insert_your_token_here"                                                                           #
+token: "MTIzNTk2NzQ1NDg1MzczMDQwNg.GxzhnK.QHIWJM0N4F6AIx4VmFmfasTeA69OFAXaHKKVMY"                                                                           #
 # ─────────────────────────────────────────────────────────────────────────────────────────────────────── #
 
 # ─────────────────────────────────────────────────────────────────────────────────────────────────────── #
@@ -25,7 +25,7 @@ mirrors:
       # Discord account settings, then Right-Click -> Copy ID on a channel.                               #
       # NOTE: You can also mirror categories and forums.                                                  #
       channelIds:                                                                                         #
-         - "insert_channel_id_to_mirror_here"                                                             #
+         - "1242158015222644769"                                                             #
       # ───────────────────────────────────────────────────────────────────────────────────────────────── #
 
       # ───────────────────────────────────────────────────────────────────────────────────────────────── #
@@ -33,7 +33,7 @@ mirrors:
       # You can create a webhook for a channel with:                                                      #
       # Edit channel -> Integrations -> Webhooks -> New webook.                                           #
       webhookUrls:                                                                                        #
-         - "insert_destination_webhook_url_here"                                                          #
+         - "https://discord.com/api/webhooks/1242168642465038439/GX1F8iQ-pLuc7WOXI8VrgYnjymvzcLxowwsmoW1zG7GT6BZB-Lsl1-pVqE9q-0sj8dRM"                                                          #
       # ───────────────────────────────────────────────────────────────────────────────────────────────── #
 
       # ───────────────────────────────────────────────────────────────────────────────────────────────── #
