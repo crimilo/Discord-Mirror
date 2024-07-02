@@ -143,6 +143,6 @@ export class MirrorFilters {
   }
 
   public match(message: Message): boolean {
-    return this.filters.some((filter) => filter.match(message));
+    return !this.filters.length || this.filters.some((filter) => filter.match(message));
   }
 }
