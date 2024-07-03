@@ -135,6 +135,14 @@ mirrors:
       #        - "crimilo"                                                                                #
       #     where: "username"                                                                             #
       # ───────────────────────────────────────────────────────────────────────────────────────────────── #
+   2:
+      # ───────────────────────────────────────────────────────────────────────────────────────────────── #
+      # You can add more mirrors by copying the structure of the first one. For example:                  #
+      channelIds:                                                                                         #
+         - "insert_channel_id_to_mirror_here"                                                             #
+      webhookUrls:                                                                                        #
+         - "insert_destination_webhook_url_here"                                                          #
+      # ───────────────────────────────────────────────────────────────────────────────────────────────── #
 ```
 
 # Disclaimer
